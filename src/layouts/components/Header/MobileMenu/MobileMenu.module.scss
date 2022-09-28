@@ -1,0 +1,94 @@
+@mixin flex-box {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000000b3;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16px;
+    .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--primary);
+    }
+
+    .close-btn {
+        font-size: 3.4rem;
+        line-height: 1;
+        padding: 0px 8px;
+        font-weight: bold;
+        background-color: transparent;
+        color: var(--white);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.menu {
+    @include flex-box;
+    flex-direction: column;
+    flex: 1;
+
+    .nav-link {
+        width: 200px;
+        text-align: center;
+        padding: 4px;
+        font-size: 2.8rem;
+        font-weight: 500;
+        color: var(--white);
+    }
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--primary);
+}
+.socials {
+    flex: 1;
+    display: inline;
+    align-self: center;
+    padding: 0 20px;
+    .social {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        padding: 4px;
+        float: left;
+        @include flex-box;
+        overflow: hidden;
+        background-color: var(--white);
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+        cursor: pointer;
+        transition: 0.3s ease-out;
+
+        &:hover {
+            background-color: var(--primary);
+        }
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .socials {
+        width: 280px;
+    }
+}

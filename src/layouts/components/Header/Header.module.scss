@@ -1,0 +1,108 @@
+.wrapper {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+.logo {
+    padding: 8px 20px;
+    color: var(--primary);
+    font-family: Satisfy, sans-serif;
+    font-size: 3.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    .link-menu {
+        width: 120px;
+        max-width: 120px;
+        margin: 0 20px;
+        padding: 16px 0;
+        font-size: 1.7rem;
+        font-weight: 500;
+        font-family: Montserrat;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .link-menu:hover {
+        opacity: 0.7;
+    }
+}
+
+.line {
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    bottom: 4px;
+    text-align: end;
+    width: 120px;
+    height: 5px;
+    border-radius: 15px;
+    background-color: rgb(24, 158, 241);
+    transition: all 0.2s ease;
+}
+
+.menu-btn {
+    width: 60px;
+    height: 60px;
+    margin-right: -8px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    display: none;
+
+    &:hover {
+        background-color: var(--primary);
+    }
+}
+
+.menu-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 40px;
+    height: 36px;
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+@media (max-width: 850px) {
+    .wrapper {
+        padding: 0 12px;
+        height: 60px;
+    }
+    .menu {
+        display: none;
+    }
+
+    .menu-btn,
+    .menu-icon {
+        display: block;
+    }
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo {
+        padding: 8px 0;
+    }
+}

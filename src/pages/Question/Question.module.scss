@@ -1,0 +1,33 @@
+.wrapper {
+    padding: 20px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.info-frame {
+    margin-left: 16px;
+    margin-bottom: 16px;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 8px;
+    background-color: rgba(45, 40, 40, 0.7);
+    border-radius: 16px;
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
+}
+
+.name {
+    color: var(--primary);
+}
+
+.email {
+}
+
+.question {
+    margin-top: 8px;
+    color: var(--white);
+}

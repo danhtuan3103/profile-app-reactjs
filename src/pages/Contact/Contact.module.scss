@@ -1,0 +1,118 @@
+.wrapper {
+    display: flex;
+    margin-top: 20px;
+    padding: 20px 80px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    h2,
+    p {
+        margin-bottom: 1.6rem;
+        font-weight: bold;
+    }
+}
+
+.input,
+.textarea {
+    width: 340px;
+    height: 40px;
+    padding: 4px 20px;
+    font-size: 1.6rem;
+    margin-bottom: 1.8rem;
+    caret-color: var(--primary);
+    border: 1px solid transparent;
+    &:focus {
+        border-color: #231a1a99;
+    }
+}
+
+.input {
+    border-radius: 30px;
+}
+
+.input:not(:placeholder-shown) {
+    color: var(--black);
+}
+.textarea {
+    height: 100px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.textarea:not(:placeholder-shown) {
+    color: var(--black);
+}
+
+.btn {
+    width: 340px;
+    height: 40px;
+    margin: 0;
+}
+
+.socials {
+    display: inline;
+    align-self: end;
+    padding: 0 20px;
+    .social {
+        width: 170px;
+        height: 190px;
+        margin: 30px;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(19, 4, 4, 0.7);
+        border-radius: 30px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+        cursor: pointer;
+        transition: 0.3s ease-out;
+
+        &:hover {
+            background-color: var(--primary);
+        }
+    }
+}
+
+@media (max-width: 1040px) {
+    .socials {
+        align-self: center;
+        .social {
+            width: 120px;
+            height: 120px;
+            margin: 12px;
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .socials {
+        align-self: center;
+        .social {
+            width: 120px;
+            height: 120px;
+            margin: 4px;
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .wrapper {
+        padding: 0;
+        margin: auto;
+    }
+    .form {
+        display: flex;
+        align-items: center;
+        h2,
+        p {
+            text-align: center;
+        }
+    }
+    .socials {
+        display: none;
+    }
+}

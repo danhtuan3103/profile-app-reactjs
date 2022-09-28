@@ -1,0 +1,91 @@
+.wrapper {
+    width: 320px;
+    height: 500px;
+    border: 1px solid hsla(0, 0%, 100%, 0.349);
+    border-radius: 16px;
+    backdrop-filter: blur(5.7px);
+    background-color: rgba(65, 56, 56, 0.27);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.right-text {
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-top: 3px solid green;
+    border-right: 3px solid green;
+}
+
+.text {
+    padding: 10px;
+}
+
+.body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.bank-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bank-img {
+    width: 100px;
+    margin-top: 2rem;
+}
+
+.bank-name {
+    text-align: center;
+}
+
+.user-name {
+    font-size: 2.2rem;
+    font-family: monospace;
+}
+
+.bank-number {
+    text-align: center;
+    letter-spacing: 1px;
+    color: var(--black);
+}
+
+.btn {
+    margin-top: 1rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.master-img {
+    width: 50px;
+}
+
+.banking-img {
+    width: 50px;
+}
+
+@media (max-width: 510px) {
+    .wrapper {
+        height: 400px;
+    }
+}

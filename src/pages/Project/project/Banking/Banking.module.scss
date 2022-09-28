@@ -1,0 +1,47 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.4rem;
+}
+
+.right-icon,
+.left-icon {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    align-self: center;
+
+    &:hover {
+        background-color: var(--primary);
+    }
+}
+
+.right-icon {
+    margin-left: 2rem;
+}
+
+.left-icon {
+    margin-right: 2rem;
+}
+.btn {
+    margin: 0;
+}
+
+@media (max-width: 510px) {
+    .control {
+        margin-top: 4px;
+    }
+}
