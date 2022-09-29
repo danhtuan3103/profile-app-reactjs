@@ -9,13 +9,33 @@ import OverLay from '~/components/OverLay';
 
 const cx = classNames.bind(styles);
 function Bank({ name, img, bankNumber, color, href }) {
+    const [isCopied, setIsCopied] = useState(false);
     const [showOverlay, setShowOverlay] = useState(false);
-    const copy = async () => {
-        await navigator.clipboard.writeText(bankNumber);
-        alert('Text copied');
+
+    async function copyTextToClipboard(text) {
+        if ('clipboard' in navigator) {
+            return await navigator.clipboard.writeText(text);
+        } else {
+            return document.execCommand('copy', true, text);
+        }
+    }
+
+    const handleCopyClick = () => {
+        // Asynchronously call copyTextToClipboard
+        copyTextToClipboard(bankNumber)
+            .then(() => {
+                // If successful, update the isCopied state value
+                setIsCopied(true);
+                setTimeout(() => {
+                    setIsCopied(false);
+                }, 2000);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
     return (
-        <div className={cx('wrapper')} style={{ backgroundColor: color }}>
+        <div className={cx('wrapper')} style={{ backgroundColor: color, borderColor: color }}>
             <div className={cx('header')}>
                 <span className={cx('chip')}>
                     <FontAwesomeIcon icon={faCreditCardAlt} size="2x" />
@@ -46,8 +66,8 @@ function Bank({ name, img, bankNumber, color, href }) {
 
             {showOverlay && (
                 <OverLay handleClose={() => setShowOverlay(false)}>
-                    <Button whitetext onClick={copy}>
-                        Copy
+                    <Button whitetext onClick={handleCopyClick}>
+                        {isCopied ? 'Copied!' : 'Copy'}
                     </Button>
                 </OverLay>
             )}

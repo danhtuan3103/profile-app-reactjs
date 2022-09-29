@@ -1,9 +1,11 @@
 .wrapper {
+    height: 80vh;
     padding: 20px 80px;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    border-radius: 16px;
+    overflow: auto;
 }
 
 .info-frame {
@@ -30,4 +32,13 @@
 .question {
     margin-top: 8px;
     color: var(--white);
+}
+
+@media (max-width: 510px) {
+    .wrapper {
+        padding: 12px 0px;
+    }
+    .info-frame {
+        margin-left: 0;
+    }
 }

@@ -29,6 +29,21 @@ function Contact() {
                 ...state,
             })
             .then((res) => {
+                if (res.data.error) {
+                    const err = res.data.error.slice(28).split(',');
+
+                    const newErr = err.map((er) => {
+                        const string = er.trim();
+                        const text = string[0].toUpperCase() + string.slice(1);
+                        return text;
+                    });
+                    console.log(newErr);
+
+                    const text = newErr.reduce((init, cur) => init + `${cur}\n`, '');
+
+                    alert(text);
+                    return;
+                }
                 console.log(res);
                 setState({
                     firstname: '',
@@ -47,7 +62,7 @@ function Contact() {
         <div className={cx('wrapper')}>
             <div className={cx('form')}>
                 <h2>Have some question ? 😊</h2>
-                <p>Sample text. Click to select the text boc. Click again or double click to start editing the text</p>
+                <p>Please leave feedback about this site and my project or write your questions for me</p>
 
                 <input
                     type="text"
