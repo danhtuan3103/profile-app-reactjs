@@ -8,6 +8,7 @@ const images = {
     shinhan: require('./shinhan.png'),
     woori: require('./worri.webp'),
     nonghuyp: require('./nonghuyp.png'),
+    error: require('./404.png'),
 };
 
 export default images;

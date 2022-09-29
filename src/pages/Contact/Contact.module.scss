@@ -78,6 +78,80 @@
     }
 }
 
+/// Modal
+.overlay-over {
+    background-color: #231a1a99;
+}
+.modal {
+    background-color: var(--white);
+    width: 350px;
+    height: 200px;
+    border-radius: 12px;
+    border: 1px solid rgba(22, 24, 35, 0.03);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    cursor: default;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    padding: 8px 8px;
+    position: relative;
+}
+
+.title {
+    margin-top: 8px;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary);
+}
+
+.close-btn-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(22, 24, 35, 0.03);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: var(--white);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--primary);
+    }
+}
+.close-btn {
+    font-size: 2rem;
+}
+
+.modal-body {
+    height: 100%;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    .modal-text {
+        padding: 2px 16px;
+        font-size: 1.6rem;
+        font-family: system-ui;
+        text-align: center;
+    }
+}
+
+/// ---------- Reponsive -----------
 @media (max-width: 1040px) {
     .socials {
         align-self: center;

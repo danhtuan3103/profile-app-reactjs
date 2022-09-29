@@ -5,6 +5,7 @@
     padding: 20px 80px;
     justify-content: space-between;
     overflow: hidden;
+    color: var(--color-text);
 }
 
 .sidebar {
@@ -27,11 +28,19 @@
         font-weight: bold;
         border-bottom: 1px solid black;
         cursor: pointer;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 }
 
-.active {
+p.active {
     color: var(--primary);
+
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .avatar {

@@ -13,11 +13,20 @@ function Question() {
             .then((response) => setQuestions(response.data))
             .catch((err) => console.log(err));
     }, []);
+
+    const handleClick = (e) => {
+        if (e.target.offsetHeight === 200) {
+            e.target.style.height = '100px';
+        } else {
+            e.target.style.height = '200px';
+        }
+    };
+
     return (
         <div className={cx('wrapper')}>
             {questions.map((question) => {
                 return (
-                    <div className={cx('info-frame')} key={question.id}>
+                    <div className={cx('info-frame')} key={question.id} onClick={handleClick}>
                         <h3 className={cx('name')}>
                             {question.firstname} {question.lastname}
                         </h3>

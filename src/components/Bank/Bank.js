@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useState, memo } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Bank.module.scss';
 import images from '~/assets/images';
@@ -7,33 +8,12 @@ import { faCreditCardAlt } from '@fortawesome/free-regular-svg-icons';
 import Button from '~/components/Button';
 import OverLay from '~/components/OverLay';
 
+const defaultFn = () => {};
 const cx = classNames.bind(styles);
-function Bank({ name, img, bankNumber, color, href }) {
+function Bank({ name, img, bankNumber, color, href, handleCopyClick = defaultFn }) {
     const [isCopied, setIsCopied] = useState(false);
     const [showOverlay, setShowOverlay] = useState(false);
 
-    async function copyTextToClipboard(text) {
-        if ('clipboard' in navigator) {
-            return await navigator.clipboard.writeText(text);
-        } else {
-            return document.execCommand('copy', true, text);
-        }
-    }
-
-    const handleCopyClick = () => {
-        // Asynchronously call copyTextToClipboard
-        copyTextToClipboard(bankNumber)
-            .then(() => {
-                // If successful, update the isCopied state value
-                setIsCopied(true);
-                setTimeout(() => {
-                    setIsCopied(false);
-                }, 2000);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
     return (
         <div className={cx('wrapper')} style={{ backgroundColor: color, borderColor: color }}>
             <div className={cx('header')}>
@@ -75,4 +55,13 @@ function Bank({ name, img, bankNumber, color, href }) {
     );
 }
 
-export default Bank;
+Bank.propTypes = {
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    bankNumber: PropTypes.string.isRequired,
+    color: PropTypes.string,
+    href: PropTypes.string.isRequired,
+    handleCopyClick: PropTypes.func,
+};
+
+export default memo(Bank);

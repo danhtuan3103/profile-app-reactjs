@@ -6,17 +6,18 @@ import uniqid from 'uniqid';
 import Button from '~/components/Button';
 import styles from './Contact.module.scss';
 import { socials } from '~/assets/data/socials';
+import OverLay from '~/components/OverLay';
 const cx = classNames.bind(styles);
 
 function Contact() {
+    const [showOverlay, setShowOverlay] = useState(false);
+    const [text, setText] = useState([]);
     const [state, setState] = useState({
         firstname: '',
         lastname: '',
         email: '',
         question: '',
     });
-
-    console.log(state);
 
     const handleChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value });
@@ -37,26 +38,32 @@ function Contact() {
                         const text = string[0].toUpperCase() + string.slice(1);
                         return text;
                     });
+
                     console.log(newErr);
 
-                    const text = newErr.reduce((init, cur) => init + `${cur}\n`, '');
-
-                    alert(text);
+                    setText(newErr);
+                    setShowOverlay(true);
                     return;
                 }
-                console.log(res);
+
                 setState({
                     firstname: '',
                     lastname: '',
                     email: '',
                     question: '',
                 });
-                alert('Send question succeesfully');
+                setText(['Send message successfully']);
+                setShowOverlay(true);
             })
             .catch((err) => {
-                console.log(err);
-                alert('Send question failary');
+                setText(['Send question failary']);
+                setShowOverlay(true);
             });
+    };
+
+    const handleClose = (e) => {
+        e.preventDefault();
+        setShowOverlay(false);
     };
     return (
         <div className={cx('wrapper')}>
@@ -110,6 +117,30 @@ function Contact() {
                     );
                 })}
             </div>
+
+            {showOverlay && (
+                <OverLay className={cx('overlay-over')} handleClose={handleClose}>
+                    <div className={cx('modal')}>
+                        <div className={cx('modal-header')}>
+                            <h4 className={cx('title')}>Notifications</h4>
+                            <div className={cx('close-btn-block')}>
+                                <span className={cx('close-btn')} onClick={handleClose}>
+                                    &#10005;
+                                </span>
+                            </div>
+                        </div>
+                        <div className={cx('modal-body')}>
+                            {text.map((txt, index) => {
+                                return (
+                                    <p key={index} className={cx('modal-text')}>
+                                        {txt}
+                                    </p>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </OverLay>
+            )}
         </div>
     );
 }

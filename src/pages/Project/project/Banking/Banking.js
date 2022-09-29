@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo, useCallback } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './Banking.module.scss';
@@ -40,7 +40,6 @@ const BANK_LIST = [
     },
 ];
 function Banking() {
-    console.log('re-render Banking');
     const [index, setIndex] = useState(0);
     const [isCopied, setIsCopied] = useState(false);
 
@@ -62,15 +61,15 @@ function Banking() {
         }
     };
 
-    async function copyTextToClipboard(text) {
+    const copyTextToClipboard = useCallback(async (text) => {
         if ('clipboard' in navigator) {
             return await navigator.clipboard.writeText(text);
         } else {
             return document.execCommand('copy', true, text);
         }
-    }
+    }, []);
 
-    const handleCopyClick = () => {
+    const handleCopyClick = useCallback(() => {
         // Asynchronously call copyTextToClipboard
         copyTextToClipboard(bank.bankNumber)
             .then(() => {
@@ -83,10 +82,17 @@ function Banking() {
             .catch((err) => {
                 console.log(err);
             });
-    };
+    }, []);
     return (
         <div className={cx('wrapper')}>
-            <Bank img={bank.image} name={bank.name} bankNumber={bank.bankNumber} href={bank.href} color={bank.color} />
+            <Bank
+                img={bank.image}
+                name={bank.name}
+                bankNumber={bank.bankNumber}
+                href={bank.href}
+                color={bank.color}
+                handleCopyClick={handleCopyClick}
+            />
 
             <div className={cx('control')}>
                 <div className={cx('left-icon')} onClick={handleClickPrevious}>
@@ -103,4 +109,4 @@ function Banking() {
     );
 }
 
-export default Banking;
+export default memo(Banking);

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './GlobalStyles.module.scss';
 
@@ -10,4 +11,7 @@ function GlobalStyles({ children }) {
     );
 }
 
+GlobalStyles.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 export default GlobalStyles;

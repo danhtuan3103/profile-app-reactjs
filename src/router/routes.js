@@ -3,6 +3,7 @@ import Contact from '~/pages/Contact';
 import About from '~/pages/About';
 import Project from '~/pages/Project';
 import Question from '~/pages/Question';
+import Error from '~/pages/Error';
 import NoHeaderLayout from '~/layouts/NoHedearLayout';
 const publicRoute = [
     { path: '/', component: Home },
@@ -11,6 +12,7 @@ const publicRoute = [
     { path: 'project', component: Project },
     { path: 'project?:slug', component: Project },
     { path: 'question', component: Question },
+    { path: '*', component: Error, layout: NoHeaderLayout },
 ];
 
 const privateRoute = [];

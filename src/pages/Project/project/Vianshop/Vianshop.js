@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Vianshop.module.scss';
 import Button from '~/components/Button';
@@ -60,4 +60,4 @@ function Vianshop() {
     );
 }
 
-export default Vianshop;
+export default memo(Vianshop);
