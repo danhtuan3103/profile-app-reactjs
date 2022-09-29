@@ -5,7 +5,7 @@
     padding: 0 50px;
     width: 100%;
     margin: 0 40px;
-    height: 500px;
+    height: 600px;
     background-color: #ffff;
     box-shadow: 0 0 0 1px #dadce0;
     border-radius: 8px;
@@ -142,11 +142,13 @@
 
 @media (max-width: 560px) {
     .wrapper {
+        height: 500px;
         margin: 0 8px;
     }
 
     .content {
-        height: 500px;
+        height: 450px;
+        padding-bottom: 50px;
         overflow-y: overlay;
     }
 
