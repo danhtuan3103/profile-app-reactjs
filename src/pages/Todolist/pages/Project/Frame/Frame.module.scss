@@ -99,7 +99,6 @@
     top: 16px;
     right: 16px;
     font-size: 3.4rem;
-    line-height: 1;
     padding: 0px 8px;
     font-weight: bold;
     background-color: transparent;
@@ -300,6 +299,23 @@
 
         .container-overlay {
             justify-content: center;
+        }
+    }
+
+    .create-wrapper {
+        align-self: start;
+    }
+    .create-wrapper {
+        margin-right: 26px;
+    }
+}
+
+@media (max-width: 390px) {
+    .seeall-overlay {
+        .close-btn {
+            font-size: 2rem;
+            top: 5px;
+            right: 50px;
         }
     }
 }
