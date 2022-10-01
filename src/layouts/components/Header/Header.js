@@ -1,4 +1,4 @@
-import { NavLink, Link, useSearchParams } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';

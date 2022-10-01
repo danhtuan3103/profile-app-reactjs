@@ -111,7 +111,13 @@ function Contact() {
             <div className={cx('socials')}>
                 {socials.map((social) => {
                     return (
-                        <a className={cx('social')} key={social.name} href={social.path} target="_blank">
+                        <a
+                            className={cx('social')}
+                            key={social.name}
+                            href={social.path}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img src={social.src} alt={social.name} />
                         </a>
                     );

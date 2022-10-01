@@ -13,6 +13,13 @@ const cx = classNames.bind(styles);
 const BANK_LIST = [
     {
         image: images.woori,
+        name: 'Woori Supper Bank',
+        bankNumber: '1002461507728',
+        href: 'https://www.wooribank.com/',
+        color: '#C853C082',
+    },
+    {
+        image: images.woori,
         name: 'Woori',
         bankNumber: '1002560243677',
         href: 'https://www.wooribank.com/',
@@ -23,13 +30,6 @@ const BANK_LIST = [
         bankNumber: '110525796054',
         href: 'https://www.shinhan.com/index.jsp',
         color: '#7A8FE082',
-    },
-    {
-        image: images.woori,
-        name: 'Woori Supper Bank',
-        bankNumber: '1002461507728',
-        href: 'https://www.wooribank.com/',
-        color: '#C853C082',
     },
     {
         image: images.nonghuyp,
@@ -82,7 +82,7 @@ function Banking() {
             .catch((err) => {
                 console.log(err);
             });
-    }, []);
+    }, [index]);
     return (
         <div className={cx('wrapper')}>
             <Bank

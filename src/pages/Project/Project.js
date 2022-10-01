@@ -15,7 +15,6 @@ const PROJECT_LIST = [
     { to: 'banking', name: 'Banking', component: Banking },
 ];
 function Project() {
-    console.log('rerender');
     const [searchParams, setSearchParams] = useSearchParams();
     const [project, setProject] = useState(() => {
         const temp = PROJECT_LIST.find((project) => project.to === searchParams.get('name')) || PROJECT_LIST[0];
@@ -24,8 +23,7 @@ function Project() {
 
     const [showPreview, setShowPreview] = useState(false);
 
-    let Project = project.component;
-
+    const Project = project.component;
     useEffect(() => {
         setProject(() => {
             const temp = PROJECT_LIST.find((project) => project.to === searchParams.get('name')) || PROJECT_LIST[0];

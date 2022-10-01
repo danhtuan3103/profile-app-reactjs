@@ -41,12 +41,16 @@
     font-weight: 500;
 }
 
+.content-wrapper {
+    max-height: 90%;
+    overflow-y: overlay;
+}
+
 .content {
     margin-top: 1rem;
     text-align: center;
     line-height: 160%;
     font-size: 1.8rem;
-    overflow-y: auto;
     word-wrap: break-word;
 
     h1 {
@@ -82,10 +86,8 @@
     }
     .content-wrapper {
         margin-top: 10px;
-        max-height: 90%;
         border-radius: 4px;
         background-color: rgb(45, 29, 29, 0.3);
-        overflow-y: overlay;
     }
     .content {
         padding: 0 20px 10px 20px;

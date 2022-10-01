@@ -13,7 +13,7 @@ function Error() {
                 GO TO HOMEPAGE
             </Button>
 
-            <img className={cx('img')} src={images.error} />
+            <img className={cx('img')} src={images.error} alt="error" />
         </div>
     );
 }

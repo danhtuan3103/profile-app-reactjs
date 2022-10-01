@@ -56,7 +56,7 @@ function Home() {
                 </div>
             </div>
             <div className={cx('img-block')}>
-                <img className={cx('img')} src={images.homeImage} alt="home-image" />
+                <img className={cx('home-img')} src={images.homeImage} alt="home-image" />
             </div>
         </div>
     );
