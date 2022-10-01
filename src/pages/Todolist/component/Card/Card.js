@@ -7,9 +7,9 @@ import 'tippy.js/dist/tippy.css';
 import styles from './Card.module.scss';
 
 const cx = classNames.bind(styles);
-function Card({ id, title, description, className, dragStart }) {
+function Card({ id, title, description, className, color = '#fff' }) {
     return (
-        <div className={cx('wrapper', { [className]: className })}>
+        <div className={cx('wrapper', { [className]: className })} style={{ backgroundColor: color }}>
             <div className={cx('header')}>
                 <span className={cx('dot')}></span>
 
@@ -19,9 +19,9 @@ function Card({ id, title, description, className, dragStart }) {
                     offset={[0, 0]}
                     render={(attrs) => (
                         <div className={cx('box')} tabIndex="-1" {...attrs}>
+                            <p>See detail</p>
                             <p>Delete</p>
-                            <p> See detail </p>
-                            <p>Delete</p>
+                            <p>Move</p>
                         </div>
                     )}
                 >

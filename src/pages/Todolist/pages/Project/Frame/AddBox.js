@@ -6,9 +6,11 @@ const cx = classNames.bind(styles);
 function AddBox({ handleClose }) {
     return (
         <div className={cx('create-wrapper')}>
-            <span className={cx('close-btn')} onClick={handleClose}>
-                &#10005;
-            </span>
+            <div className={cx('close-block')}>
+                <span className={cx('close-btn')} onClick={handleClose}>
+                    &#10005;
+                </span>
+            </div>
             <div className={cx('content')}>
                 <div className={cx('content-header')}>
                     <h3>Create an Project</h3>
@@ -28,7 +30,7 @@ function AddBox({ handleClose }) {
                     <textarea className={cx('desc')} placeholder="Description" />
                 </div>
                 <div className={cx('btn-block')}>
-                    <Button className={cx('btn', 'btn-cancel')} small>
+                    <Button className={cx('btn', 'btn-cancel')} small onClick={handleClose}>
                         Cancel
                     </Button>
                     <Button className={cx('btn', 'btn-create')} small primary>

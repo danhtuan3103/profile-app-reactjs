@@ -23,24 +23,40 @@ const MENU_LIST = [
     { title: 'Goals', to: '/todolist-app/goals', icon: GiOnTarget, color: '#d923d3', component: Goals },
 ];
 function Todolist() {
-    const path = window.location.pathname;
-    const menuRef = useRef();
-
-    const handleClickMenuIcon = () => {
-        if (menuRef.current.style.width === '0px') {
-            menuRef.current.style.width = '250px';
-            return;
-        }
-        menuRef.current.style.width = '0px';
-    };
-
     // Change page
+    const path = window.location.pathname;
     const [page, setPage] = useState(() => {
         const temp = MENU_LIST.find((page) => page.to === path) || MENU_LIST[0];
         return temp;
     });
 
+    const [showOverlay, setShowOverlay] = useState(false);
+    const menuRef = useRef();
+    const isPhone = document.documentElement.clientWidth < 739;
+    console.log(showOverlay);
+
+    const handleClickMenuIcon = () => {
+        if (menuRef.current.style.width === '0px') {
+            menuRef.current.style.width = '250px';
+            setShowOverlay(true);
+
+            return;
+        }
+        setShowOverlay(false);
+        menuRef.current.style.width = '0px';
+    };
+
     const Page = page.component;
+
+    const handleClickLink = (e) => {
+        if (isPhone) {
+            setShowOverlay(false);
+            menuRef.current.style.width = '0px';
+            return;
+        } else {
+            return;
+        }
+    };
 
     useEffect(() => {
         setPage(() => {
@@ -48,15 +64,24 @@ function Todolist() {
             return temp;
         });
     }, [path]);
+
     return (
         <div className={cx('wrapper')}>
             <Navbar onClickMenuIcon={handleClickMenuIcon} />
+
             <div className={cx('body')}>
                 <Menu ref={menuRef}>
                     {MENU_LIST.map((item, index) => {
                         let Icon = item.icon;
                         return (
-                            <MenuItem key={index} title={item.title} to={item.to} icon={<Icon />} color={item.color} />
+                            <MenuItem
+                                key={index}
+                                title={item.title}
+                                to={item.to}
+                                icon={<Icon />}
+                                color={item.color}
+                                onClick={handleClickLink}
+                            />
                         );
                     })}
                 </Menu>
@@ -65,6 +90,7 @@ function Todolist() {
                     <Page />
                 </div>
             </div>
+            {isPhone && showOverlay ? <div className={cx('overlay')} onClick={handleClickMenuIcon}></div> : <></>}
         </div>
     );
 }

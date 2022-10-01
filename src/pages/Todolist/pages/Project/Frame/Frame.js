@@ -10,7 +10,7 @@ import OverLay from '~/components/OverLay';
 import Card from '~/pages/Todolist/component/Card';
 import AddBox from './AddBox';
 const cx = classNames.bind(styles);
-function Frame({ id, children, title, count = 0, data = [] }) {
+function Frame({ id, children, title, data = [] }) {
     const ref = useRef();
 
     const [showAll, setShowAll] = useState(false);
@@ -48,7 +48,7 @@ function Frame({ id, children, title, count = 0, data = [] }) {
                 </div>
                 <Tippy content="See all">
                     <span className={cx('number')} onClick={HandleSeeAll}>
-                        {count}
+                        {data.length}
                     </span>
                 </Tippy>
             </div>
@@ -60,9 +60,11 @@ function Frame({ id, children, title, count = 0, data = [] }) {
             {/* See all */}
             {showAll && (
                 <OverLay className={cx('seeall-overlay')}>
-                    <span className={cx('close-btn')} onClick={handleClose}>
-                        &#10005;
-                    </span>
+                    <div className={cx('close-block')}>
+                        <span className={cx('close-btn')} onClick={handleClose}>
+                            &#10005;
+                        </span>
+                    </div>
                     <div className={cx('container-overlay')}>
                         {data.map((child, index) => (
                             <Card
@@ -70,6 +72,7 @@ function Frame({ id, children, title, count = 0, data = [] }) {
                                 title={child.title}
                                 description={child.description}
                                 className={cx('card')}
+                                color={child.color}
                             />
                         ))}
                     </div>

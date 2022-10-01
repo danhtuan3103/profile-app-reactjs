@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import styles from './Project.module.scss';
-import { useRef } from 'react';
 
 import Frame from './Frame';
 import Card from '~/pages/Todolist/component/Card';
@@ -16,28 +15,25 @@ function Project() {
         {
             id: 1,
             title: 'To do',
-            count: 3,
             children: [
-                { id: 1, title: 'Design', description: description },
-                { id: 2, title: 'Design', description: description },
-                { id: 3, title: 'Design', description: description },
-                { id: 4, title: 'Design', description: description },
-                { id: 5, title: 'Design', description: description },
-                { id: 6, title: 'Design', description: description },
-                { id: 7, title: 'Design', description: description },
+                { id: 1, title: 'Design', description: description, color: '#34eba8' },
+                { id: 2, title: 'Design', description: description, color: '#22998d' },
+                { id: 3, title: 'Design', description: description, color: '#992273' },
+                { id: 4, title: 'Design', description: description, color: '#979922' },
+                { id: 5, title: 'Design', description: description, color: '#979922' },
+                { id: 6, title: 'Design', description: description, color: '#22998d' },
+                { id: 7, title: 'Design', description: description, color: '#22998d' },
             ],
         },
 
         {
             id: 2,
             title: 'In Progress',
-            count: 3,
-            children: [{ id: 7, title: 'Design', description: description }],
+            children: [{ id: 7, title: 'Design', description: description, color: '#22998d' }],
         },
         {
             id: 3,
             title: 'Completed',
-            count: 3,
         },
     ];
 
@@ -62,6 +58,7 @@ function Project() {
                                         id={child.id}
                                         title={child.title}
                                         description={child.description}
+                                        color={child.color}
                                     />
                                 ))}
                         </Frame>
