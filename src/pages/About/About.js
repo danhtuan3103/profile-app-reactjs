@@ -12,7 +12,7 @@ function About() {
         { title: 'Korean', value: 'Korean', component: Korean },
     ];
 
-    const [select, setSelect] = useState(LIST_INTRO[1]);
+    const [select, setSelect] = useState(LIST_INTRO[0]);
 
     let Select = select.component;
 
