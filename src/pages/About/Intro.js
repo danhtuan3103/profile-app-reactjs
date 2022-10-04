@@ -8,22 +8,20 @@ export const Vietnamese = () => {
         <div className={cx('content')}>
             <h1>Xin Chao ! 👋</h1>
             <p>
-                Cục Hàng không Việt Nam cho biết, theo chủ trương của Bộ GTVT về việc khai thác các chuyến bay thường lệ
-                chở khách quốc tế, trong các ngày 17 và 24.12.2021, cơ quan này đã có thư gửi một số đối tác, trong đó
-                có Tổng cục Hàng không dân dụng Trung Quốc đề nghị khôi phục vận chuyển hành khách thường lệ giữa hai
-                nước.
+                Đó là một ngày tháng tư sáng lạnh, vừa lúc đồng hồ điểm báo mười ba trăm. Cằm rụt xuống ngực để mong
+                tránh gió ác, Winston Smith lướt nhanh qua cửa kính của khu Nhà Chiến Thắng nhưng không đủ nhanh để ngăn
+                một luồng bụi cát lùa vào theo anh.
             </p>
             <p>
-                Đến ngày 17.1.2022, Tổng cục Hàng không dân dụng Trung Quốc có thư phản hồi đối với đề xuất của Cục Hàng
-                không Việt Nam. Theo đó, cơ quan này chia sẻ quan điểm của Cục Hàng không về tầm quan trọng của việc
-                khôi phục các chuyến bay chở khách thường lệ giữa hai nước.
-            </p>
-            <p>
-                Tổng cục Hàng không dân dụng Trung Quốc cũng chưa được giao thẩm quyền trao đổi với nhà chức trách hàng
-                không các nước về việc khôi phục vận chuyển hành khách quốc tế. Do đó, Tổng cục Hàng không dân dụng
-                Trung Quốc chưa thể đồng ý với đề xuất của Cục Hàng không về việc nối lại đường bay thường lệ. Tổng cục
-                Hàng không dân dụng Trung Quốc cho biết sẽ cập nhật thông tin cho Cục Hàng không Việt Nam ngay khi phía
-                Trung Quốc nới lỏng các biện pháp kiểm soát.
+                Hành lang hôi mùi cải luộc chiếu nát. Nơi một phía đầu tường thấy phô một tấm bích chương mầu, quá lớn
+                để mang trang trí trong nhà. Nó hình dung một gương mặt kếch xù, rộng hơn một thước : mặt một người đàn
+                ông chừng bốn mươi nhăm tuổi, có râu đen dày và nét đẹp cứng cáp. Winston leo lên cầu thang. Thử thang
+                máy vô ích. Thuở thịnh nhất thỉnh thoảng máy mới chạy, nữa là bây giờ điện lại bị cúp vào ban ngày. Biện
+                pháp này thuộc phong trào tiết kiệm sửa soạn “Tuần lễ Hận thù”. Căn phòng của Winston ở tận lầu bẩy, anh
+                đã ba mươi chín tuổi lại mắc chứng loét giãn tĩnh mạch nơi đầu gối phải, nên anh đi chậm chạp, dừng nghỉ
+                nhiều lần giữa cầu thang. Tại mỗi thềm, trước lồng thang máy, tấm bích chương với gương mặt kếch xù từ
+                tường nhìn ra. Đấy là một loại tranh được bố trí sao cho cặp mắt tuồng như theo dõi từng cử động bên
+                ngoài. BÁC ĐANG NHÌN BẠN, dưới bức tranh có lời ghi như vậy.
             </p>
         </div>
     );
@@ -55,21 +53,30 @@ export const Korean = () => {
 export const English = () => {
     return (
         <div className={cx('content')}>
-            <h1>Hey. What's up? Hello! 👋</h1>
+            <h1>Hey. What's up ? 👋</h1>
             <p>
-                As a graduate student, Saito worked as the fiction editor for Quince Magazine, a literary journal. In
-                2006, her collection of stories won the Delaney Prize in Short Fiction. Tin & Copper Press will publish
-                Saito’s debut novel in February 2020.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <p>
-                In 2000, Saito began her editing career with Hopewell Books. She most valued the company’s collaborative
-                work environment and its commitment to publishing diverse writers. Saito believes that her time at
-                Hopewell was crucial in developing the ethics she practices in her career today.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <p>
-                When not writing or editing, Saito enjoys surfing, kayaking and taking long drives down the Pacific
-                Coast Highway. For up-to-date information, listen to her podcast, SaitoSpeaks. To hire Saito as a
-                freelance editor, email her at saito.fumiko@domain.com.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
         </div>
     );
