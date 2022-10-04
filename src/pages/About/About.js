@@ -7,8 +7,8 @@ const cx = classNames.bind(styles);
 
 function About() {
     const LIST_INTRO = [
-        { title: 'English', value: 'English', component: English },
         { title: 'Vietnamses', value: 'Vietnamses', component: Vietnamese },
+        { title: 'English', value: 'English', component: English },
         { title: 'Korean', value: 'Korean', component: Korean },
     ];
 
